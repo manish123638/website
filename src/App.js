@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "./Header";
-import Categories from "./Categories";
-import Footer from "./Footer";
+import Header from "./Component/Header";
+import Categories from "./Component/Categories";
+import Footer from "./Component/Footer";
 
 function App() {
   const [message, setMessage] = useState("");

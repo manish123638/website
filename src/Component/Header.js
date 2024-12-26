@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from './images/background1.jpg'; 
+import backgroundImage from '../images/background1.jpg'; 
 
 const Header = () => {
   return (
