@@ -5,12 +5,12 @@ import Header from "./Component/Header";
 import Categories from "./Component/Categories";
 import Footer from "./Component/Footer";
 import GenrePage from "./Component/GenrePage";
-import AddToCartPage from "./Component/AddtoCart";
+import CartPage from "./Component/CartPage";
 import Contact from "./Component/Contact";
-import { CartProvider } from "./Context/CartContext";
 
 function App() {
   const [message, setMessage] = useState("");
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     axios
@@ -19,21 +19,35 @@ function App() {
       .catch((error) => console.error(error));
   }, []);
 
+  const addToCart = (item) => {
+    setCartItems((prevItems) => [...prevItems, item]);
+  };
+
+  const removeFromCart = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
   return (
-    <CartProvider>
-      <Router>
-        <div>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Categories />} />
-            <Route path="/genre/:genreId" element={<GenrePage />} />
-            <Route path="/cart" element={<AddToCartPage />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
-    </CartProvider>
+    <Router>
+      <div>
+        <Header cartCount={cartItems.length} />
+        <Routes>
+          <Route path="/" element={<Categories />} />
+          <Route
+            path="/genre/:genreId"
+            element={<GenrePage addToCart={addToCart} />}
+          />
+          <Route
+            path="/cart"
+            element={
+              <CartPage cartItems={cartItems} removeFromCart={removeFromCart} />
+            }
+          />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
