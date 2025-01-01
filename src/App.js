@@ -6,8 +6,8 @@ import Categories from "./Component/Categories";
 import Footer from "./Component/Footer";
 import GenrePage from "./Component/GenrePage";
 import AddToCartPage from "./Component/AddtoCart";
+import Contact from "./Component/Contact";
 import { CartProvider } from "./Context/CartContext";
-
 
 function App() {
   const [message, setMessage] = useState("");
@@ -28,7 +28,7 @@ function App() {
             <Route path="/" element={<Categories />} />
             <Route path="/genre/:genreId" element={<GenrePage />} />
             <Route path="/cart" element={<AddToCartPage />} />
-           
+            <Route path="/contact" element={<Contact />} />
           </Routes>
           <Footer />
         </div>

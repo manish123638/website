@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import backgroundImage from '../images/background1.jpg';
+import backgroundImage from "../images/background1.jpg";
 
 const Header = () => {
   return (
@@ -18,11 +18,9 @@ const Header = () => {
         <nav className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-blue-300">Home</Link>
           <Link to="/categories" className="hover:text-blue-300">Categories</Link>
-               
-          <Link to="/cart">Add to Cart</Link>
+          <Link to="/cart" className="hover:text-blue-300">Add to Cart</Link>
+          <Link to="/contact" className="hover:text-blue-300">Contact Us</Link>
         </nav>
-
-      
       </div>
     </header>
   );
