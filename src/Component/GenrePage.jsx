@@ -13,13 +13,13 @@ const books = [
 ];
 
 const GenrePage = () => {
-  const { genreId } = useParams(); // This will get the genre from the URL
+  const { genreId } = useParams(); L
 
   return (
     <section className="py-12 bg-gray-100">
       <div className="container mx-auto px-4 max-w-7xl">
         <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
-          {genreId} Books  {/* Display the genre name */}
+          {genreId} Books  
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {books.map((book) => (
