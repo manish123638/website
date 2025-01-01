@@ -18,10 +18,10 @@ const Header = ({ cartCount }) => {
         <nav className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-blue-300">Home</Link>
           <Link to="/categories" className="hover:text-blue-300">Categories</Link>
-          <Link to="/cart" className="hover:text-blue-300">Add to Cart</Link>
+          
           <Link to="/contact" className="hover:text-blue-300">Contact Us</Link>
 <Link to="/cart" className="relative">
-            Cart
+            Add to Cart
             {cartCount > 0 && (
               <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full px-2 text-sm">
                 {cartCount}
