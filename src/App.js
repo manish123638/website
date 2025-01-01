@@ -7,28 +7,29 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GenrePage from "./Component/GenrePage";
 
 function App() {
-  const [message, setMessage] = useState("");
+  // eslint-disable-next-line
+const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    axios.get("http://localhost:5000")
-      .then((response) => setMessage(response.data))
-      .catch((error) => console.error(error));
-  }, []);
-return(
-  <div>
+useEffect(() => {
+  axios.get("http://localhost:5000")
+    .then((response) => setMessage(response.data))
+    .catch((error) => console.error(error));
+}, []);
 
-  <Header />
-    <Categories/>
-    <Footer/>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Categories />} />
-        <Route path="/genre/:genreId" element={<GenrePage />} />
-      </Routes>
-    </Router>
-</div>
-)
-
-}
-
-export default App;
+  
+    return (
+      <Router>
+        <div>
+          <Header />
+          <Categories />
+          <Footer />
+          <Routes>
+            <Route path="/" element={<Categories />} />
+            <Route path="/genre/:genreId" element={<GenrePage />} /> 
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
+  
+  export default App;

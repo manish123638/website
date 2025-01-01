@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import backgroundImage from '../images/background1.jpg';
 
 const Header = () => {
@@ -16,19 +16,10 @@ const Header = () => {
         </div>
 
         <nav className="hidden md:flex space-x-6">
-          
-          <Link to="/" className="hover:text-blue-300">
-            Home
-          </Link>
-          <Link to="/categories" className="hover:text-blue-300">
-            Categories
-          </Link>
-          <Link to="/about" className="hover:text-blue-300">
-            About
-          </Link>
-          <Link to="/contact" className="hover:text-blue-300">
-            Contact Us
-          </Link>
+          <Link to="/" className="hover:text-blue-300">Home</Link>
+          <Link to="/categories" className="hover:text-blue-300">Categories</Link>
+          <Link to="/about" className="hover:text-blue-300">About</Link>
+          <Link to="/contact" className="hover:text-blue-300">Contact Us</Link>
         </nav>
 
         <div className="flex items-center space-x-4">

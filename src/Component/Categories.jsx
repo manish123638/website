@@ -51,14 +51,14 @@ const Categories = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
             <Link to={`/genre/${category.title}`} key={category.id}>
-              <div className="relative group rounded-lg overflow-hidden shadow-xl transition-all duration-300">
+              <div className="relative group rounded-lg overflow-hidden shadow-xl">
                 <img
                   src={category.image}
                   alt={category.title}
-                  className="w-full h-40 object-cover rounded-md transition-all duration-300 transform group-hover:scale-105"
+                  className="w-full h-40 object-cover rounded-md group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 flex items-center justify-center transition-all duration-300">
-                  <h3 className="text-white text-2xl font-semibold text-shadow-lg group-hover:text-yellow-300 transition-all duration-300">
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 flex items-center justify-center">
+                  <h3 className="text-white text-2xl font-semibold">
                     {category.title}
                   </h3>
                 </div>
