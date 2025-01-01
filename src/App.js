@@ -3,6 +3,8 @@ import axios from "axios";
 import Header from "./Component/Header";
 import Categories from "./Component/Categories";
 import Footer from "./Component/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GenrePage from "./Component/GenrePage";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -18,6 +20,12 @@ return(
   <Header />
     <Categories/>
     <Footer/>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Categories />} />
+        <Route path="/genre/:genreId" element={<GenrePage />} />
+      </Routes>
+    </Router>
 </div>
 )
 

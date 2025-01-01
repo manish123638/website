@@ -1,33 +1,34 @@
 import React from "react";
-import backgroundImage from '../images/background1.jpg'; 
+import { Link } from "react-router-dom"; 
+import backgroundImage from '../images/background1.jpg';
 
 const Header = () => {
   return (
     <header
       className="bg-blue-600 text-white bg-cover bg-center h-[100px]"
-      style={{ backgroundImage: `url(${backgroundImage})` }} 
+      style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
-        
         <div className="text-2xl font-bold">
-          <a href="/" className="hover:text-blue-300">
+          <Link to="/" className="hover:text-blue-300">
             eBookShop
-          </a>
+          </Link>
         </div>
 
         <nav className="hidden md:flex space-x-6">
-          <a href="#home" className="hover:text-blue-300">
+          {/* Replace <a> with <Link> for internal navigation */}
+          <Link to="/" className="hover:text-blue-300">
             Home
-          </a>
-          <a href="#categories" className="hover:text-blue-300">
+          </Link>
+          <Link to="/categories" className="hover:text-blue-300">
             Categories
-          </a>
-          <a href="#about" className="hover:text-blue-300">
+          </Link>
+          <Link to="/about" className="hover:text-blue-300">
             About
-          </a>
-          <a href="#contact" className="hover:text-blue-300">
+          </Link>
+          <Link to="/contact" className="hover:text-blue-300">
             Contact Us
-          </a>
+          </Link>
         </nav>
 
         <div className="flex items-center space-x-4">

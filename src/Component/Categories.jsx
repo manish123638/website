@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import img1 from "../images/img1.webp";
 import img2 from "../images/img2.webp";
 import img3 from "../images/img3.webp";
@@ -11,7 +12,7 @@ import img9 from "../images/img9.webp";
 import img10 from "../images/img10.webp";
 import img11 from "../images/img11.webp";
 import img12 from "../images/img12.webp";
-import backgroundImage from '../images/background2.jpg'; 
+import backgroundImage from "../images/background2.jpg";
 
 const Categories = () => {
   const categories = [
@@ -34,31 +35,35 @@ const Categories = () => {
       className="bg-white py-12 bg-cover bg-center"
       style={{
         backgroundImage: `url(${backgroundImage})`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
       }}
     >
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-rose-100">Browse Genres</h2>
-          <p className="mt-2 text-rose-100">Explore the categories of books available in our collection</p>
+          <p className="mt-2 text-rose-100">
+            Explore the categories of books available in our collection
+          </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {categories.map((category) => (
-            <div key={category.id} className="relative group rounded-lg overflow-hidden shadow-xl transition-all duration-300">
-              <img
-                src={category.image}
-                alt={category.title}
-                className="w-full h-40 object-cover rounded-md transition-all duration-300 transform group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 flex items-center justify-center transition-all duration-300">
-                <h3 className="text-white text-2xl font-semibold text-shadow-lg group-hover:text-yellow-300 transition-all duration-300">
-                  {category.title}
-                </h3>
+            <Link to={`/genre/${category.title}`} key={category.id}>
+              <div className="relative group rounded-lg overflow-hidden shadow-xl transition-all duration-300">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-full h-40 object-cover rounded-md transition-all duration-300 transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 flex items-center justify-center transition-all duration-300">
+                  <h3 className="text-white text-2xl font-semibold text-shadow-lg group-hover:text-yellow-300 transition-all duration-300">
+                    {category.title}
+                  </h3>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
