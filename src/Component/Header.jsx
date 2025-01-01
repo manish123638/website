@@ -18,19 +18,11 @@ const Header = () => {
         <nav className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-blue-300">Home</Link>
           <Link to="/categories" className="hover:text-blue-300">Categories</Link>
-          <Link to="/about" className="hover:text-blue-300">About</Link>
-          <Link to="/contact" className="hover:text-blue-300">Contact Us</Link>
+               
+          <Link to="/cart">Add to Cart</Link>
         </nav>
 
-        <div className="flex items-center space-x-4">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search books..."
-              className="rounded-full px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
-        </div>
+      
       </div>
     </header>
   );

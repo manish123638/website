@@ -17,7 +17,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold">Information</h3>
             <ul className="mt-2 space-y-2">
               <li>
-                <Link to="/privacy-policy" className="text-white hover:underline">
+                <Link to="/genre" className="text-white hover:underline">
                   Privacy Policy
                 </Link>
               </li>
