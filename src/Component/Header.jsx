@@ -16,7 +16,7 @@ const Header = () => {
         </div>
 
         <nav className="hidden md:flex space-x-6">
-          {/* Replace <a> with <Link> for internal navigation */}
+          
           <Link to="/" className="hover:text-blue-300">
             Home
           </Link>
